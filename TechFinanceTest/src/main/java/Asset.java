@@ -5,12 +5,12 @@ public class Asset {
     private final double targetPercent;
     private final double minimumTick;
 
-    public Asset(String name, double price, double quantity, double targetPercent) {
+    public Asset(String name, double price, double quantity, double targetPercent, double minimumTick) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.targetPercent = targetPercent;
-        this.minimumTick = price;
+        this.minimumTick = minimumTick;
     }
 
     public String getName() {
