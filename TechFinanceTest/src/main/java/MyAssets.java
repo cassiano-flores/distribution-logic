@@ -1,5 +1,5 @@
 /*
-    ÚNICO ARQUIVO QUE SERÁ MODIFICADO!
+    ÚNICO ARQUIVO QUE SERÝ MODIFICADO!
     A MEDIDA QUE COMPRAR/VENDER ATIVOS, INSERIR AQUI COM SUA RESPECTIVA QUANTIDADE E PERCENTUAL DESEJADO
 */
 
@@ -18,21 +18,19 @@ public enum MyAssets {
     KNRI11(4, (0.25 * 0.5 * ((double) 1 / 2))),
     MXRF11(70, (0.25 * 0.5 * ((double) 1 / 2))),
     HGLG11(1, (0.25 * 0.18 * ((double) 1 / 2))),
-    VILG11(1, (0.25 * 0.18 * ((double) 1 / 2))),
-    BRCR11(1, (0.25 * 0.18 * ((double) 1 / 2))),
-    HGRE11(1, (0.25 * 0.18 * ((double) 1 / 2))),
+    VILG11(0, (0.25 * 0.18 * ((double) 1 / 2))),
+    BRCR11(0, (0.25 * 0.18 * ((double) 1 / 2))),
+    HGRE11(0, (0.25 * 0.18 * ((double) 1 / 2))),
     MALL11(1, (0.25 * 0.14 * ((double) 1 / 2))),
-    XPML11(2, (0.25 * 0.14 * ((double) 1 / 2)))/*,
-    DLR(1),
-    O(1),
-    STAG(1),
-    SPG(1),
-    AMT(1),
-    ARR(1),
-    VOO(1),
-    BTC(1),
-    ETH(1),
-    RE(1)*/;
+    XPML11(2, (0.25 * 0.14 * ((double) 1 / 2))),
+    DLR(0, (0.2 * ((double) 1 / 7))),
+    O(2.65, (0.2 * ((double) 1 / 7))),
+    STAG(0, (0.2 * ((double) 1 / 7))),
+    SPG(0, (0.2 * ((double) 1 / 7))),
+    AMT(0.85, (0.2 * ((double) 1 / 7))),
+    ARR(9.16225, (0.2 * ((double) 1 / 7))),
+    VOO(0, (0.2 * ((double) 1 / 7))),
+    RE(1000, 0.1);
 
     private final double quantity;
     private final double targetPercent;

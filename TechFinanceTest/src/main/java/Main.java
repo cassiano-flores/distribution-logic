@@ -11,13 +11,20 @@ public class Main {
         int index = 0;
         double sum = 0;
 
+        // US Assets
+        String[] usAssets = new String[] {"DLR","O","STAG","SPG","AMT","ARR","VOO"};
+
         try {
             // URL da API
-            JSONArray stocksArray = getObjects();
+            JSONArray assetsRequest = getAssetsBR();
+
+            for (int i = 0; i < usAssets.length; i++) {
+              assetsRequest.put(getAssetUS(usAssets[i]));
+            }
 
             // Calculando o valor total dos ativos atuais
-            for (int i = 0; i < stocksArray.length(); i++) {
-                JSONObject stockObject = stocksArray.getJSONObject(i);
+            for (int i = 0; i < assetsBR.length(); i++) {
+                JSONObject stockObject = assetsBR.getJSONObject(i);
                 String name = stockObject.getString("stock");
                 double price = stockObject.getDouble("close");
 
@@ -27,6 +34,10 @@ public class Main {
                     index++;
                 }
             }
+
+            // Reserva de emergÍncia
+            myAssets[index] = new Asset("RE", 1, MyAssets.valueOf("RE").getQuantity(), MyAssets.valueOf("RE").getTargetPercent());
+            sum += myAssets[index].getQuantity();
 
             while (contribution > 0) {
                 Asset assetToAdd = getAssetToAdd(myAssets, sum);
@@ -47,7 +58,7 @@ public class Main {
         printReport(myAssets);
     }
 
-    private static JSONArray getObjects() throws IOException {
+    private static JSONArray getAssetsBR() throws IOException {
         URL url = new URL("https://brapi.dev/api/quote/list?sortBy=name&sortOrder=asc&token=2RpfSrYsBy4i23T6TLdZa2");
 
         // Abrindo conex√£o HTTP
@@ -68,6 +79,44 @@ public class Main {
 
         // Obtendo o array de stocks
         return jsonResponse.getJSONArray("stocks");
+    }
+
+    private static JSONObject getAssetUS(String ticker) throws IOException {
+        URL url = new URL("https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=" + ticker + "&apikey=GQYE5EC48N9SSD0T");
+
+        // Abrindo conex„o HTTP
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("GET");
+
+        // Lendo a resposta
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        // Convertendo a resposta para JSON
+        JSONObject jsonResponse = new JSONObject(response.toString());
+
+        // Obtendo o objeto "Time Series (Daily)"
+        JSONObject timeSeriesDaily = jsonResponse.getJSONObject("Time Series (Daily)");
+
+        // Obtendo a primeira chave (data) dentro de "Time Series (Daily)"
+        String firstDate = timeSeriesDaily.keys().next();
+
+        // Obtendo o primeiro objeto dentro de "Time Series (Daily)"
+        JSONObject firstObject = timeSeriesDaily.getJSONObject(firstDate);
+
+        // Removendo a chave "data"
+        timeSeriesDaily.remove(firstDate);
+
+        // Criando uma propriedade "stock" no objeto e definindo seu valor como o ticker
+        firstObject.put("stock", ticker);
+
+        // Retornando o objeto modificado
+        return firstObject;
     }
 
     private static Asset getAssetToAdd(Asset[] myAssets, double sum) {
@@ -131,11 +180,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        if (args.length == 0) {
+/*         if (args.length == 0) {
             System.out.println("Not a valid contribution.");
             return;
-        }
+        } */
 
-        getDistribution(Integer.parseInt(args[0]));
+        // getDistribution(Integer.parseInt(args[0]));
+        getDistribution(5000);
     }
 }
