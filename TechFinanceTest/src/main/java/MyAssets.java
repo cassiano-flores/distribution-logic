@@ -1,6 +1,6 @@
 /*
-    ÚNICO ARQUIVO QUE SERÝ MODIFICADO!
-    A MEDIDA QUE COMPRAR/VENDER ATIVOS, INSERIR AQUI COM SUA RESPECTIVA QUANTIDADE E PERCENTUAL DESEJADO
+    ÚNICO ARQUIVO QUE SERÁ MODIFICADO!
+    A MEDIDA QUE COMPRAR/VENDER ATIVOS, INSERIR AQUI COM SUA RESPECTIVA *QUANTIDADE* E *PERCENTUAL DESEJADO*
 */
 
 public enum MyAssets {
@@ -30,9 +30,9 @@ public enum MyAssets {
     AMT(0.85, (0.2 * ((double) 1 / 7))),
     ARR(9.16225, (0.2 * ((double) 1 / 7))),
     VOO(0, (0.2 * ((double) 1 / 7))),
-    RE(1000, 0.1),
     BTC(0.00318941, (0.05 * 0.8)),
-    ETH(0.0205375, (0.05 * 0.2));
+    ETH(0.0205375, (0.05 * 0.2)),
+    RE(1000, 0.1);
 
     private final double quantity;
     private final double targetPercent;

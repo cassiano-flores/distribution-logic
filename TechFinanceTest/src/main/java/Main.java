@@ -3,6 +3,7 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Iterator;
 
 public class Main {
 
@@ -22,11 +23,11 @@ public class Main {
             JSONArray otherAssets = getAssetsCrypto();
 
             // ATIVOS US (20%)
-            for (int i = 0; i < usAssets.length(); i++) {
-                otherAssets.put(getAssetUS(usAssets[i]));
+            for (String usAsset : usAssets) {
+                otherAssets.put(getAssetUS(usAsset));
             }
 
-            // Cria Asset para US e Crypto que terão MinimumTick 0.0001
+            // Cria Asset para US e Crypto que terÃ£o MinimumTick 0.0001
             for ( ; index < otherAssets.length(); index++) {
                 JSONObject stockObject = otherAssets.getJSONObject(index);
                 String name = stockObject.getString("stock");
@@ -46,7 +47,7 @@ public class Main {
                 sum += myAssets[index].getQuantity() * myAssets[index].getPrice();
             }
 
-            // RESERVA DE EMERGÊNCIA (10%)
+            // RESERVA DE EMERGÃŠNCIA (10%)
             myAssets[index] = new Asset("RE", 1, MyAssets.valueOf("RE").getQuantity(), MyAssets.valueOf("RE").getTargetPercent(), 1);
             sum += myAssets[index].getQuantity();
 
@@ -72,7 +73,7 @@ public class Main {
     private static JSONArray getAssetsBR() throws IOException {
         URL url = new URL("https://brapi.dev/api/quote/list?sortBy=name&sortOrder=asc&token=2RpfSrYsBy4i23T6TLdZa2");
 
-        // Abrindo conexão HTTP
+        // Abrindo conexÃ£o HTTP
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("GET");
 
@@ -126,7 +127,7 @@ public class Main {
         timeSeriesDaily.remove(firstDate);
         firstObject.put("stock", ticker);
 
-        double closePrice = firstObject.getDouble("close");
+        double closePrice = firstObject.getDouble("4. close");
         double dollarPrice = getDollarPrice();
         firstObject.put("close", closePrice * dollarPrice);
 
@@ -158,7 +159,7 @@ public class Main {
             JSONObject asset = jsonResponse.getJSONObject(keys.next());
 
             // Removendo a propriedade "code" e substituindo por "stock"
-            String stockName = asset.getString("code")
+            String stockName = asset.getString("code");
             asset.remove("code");
             asset.put("stock", stockName);
 
@@ -253,11 +254,12 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Not a valid contribution.");
-            return;
-        }
+//        if (args.length == 0) {
+//            System.out.println("Not a valid contribution.");
+//            return;
+//        }
 
-        getDistribution(Integer.parseInt(args[0]));
+//        getDistribution(Integer.parseInt(args[0]));
+        getDistribution(10000);
     }
 }
