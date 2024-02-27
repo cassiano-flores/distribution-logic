@@ -1,0 +1,13 @@
+Ativo: RE         Quantidade: 963        Valor: 963       
+Ativo: SAPR3      Quantidade: 86         Valor: 427.4200000000009
+Ativo: AESB3      Quantidade: 40         Valor: 420.0     
+Ativo: KNRI11     Quantidade: 4          Valor: 656.44    
+Ativo: BBAS3      Quantidade: 7          Valor: 410.05999999999995
+Ativo: MXRF11     Quantidade: 44         Valor: 458.92000000000024
+Ativo: CXSE3      Quantidade: 24         Valor: 349.6799999999999
+Ativo: BBSE3      Quantidade: 9          Valor: 299.79    
+Ativo: HGLG11     Quantidade: 2          Valor: 334.12    
+Ativo: BBDC3      Quantidade: 18         Valor: 226.25999999999993
+Ativo: MALL11     Quantidade: 2          Valor: 236       
+Ativo: CMIG4      Quantidade: 8          Valor: 94.15999999999998
+Ativo: XPML11     Quantidade: 1          Valor: 118.32    
