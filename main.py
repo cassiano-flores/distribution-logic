@@ -161,6 +161,8 @@ def main():
 
     print_portfolio(ativos)
 
+    print("Finalizado")
+
 
 # Executar a função principal
 if __name__ == "__main__":
