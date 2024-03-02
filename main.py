@@ -3,53 +3,60 @@ import math
 
 # My assets
 assets = {
-    'BBAS3':  {'quantity': 5,          'targetPercent': (0.4 * 0.28 * (1 / 3)),  'type': 'BR', 'price': 0},
-    'BBDC3':  {'quantity': 35,         'targetPercent': (0.4 * 0.28 * (1 / 3)),  'type': 'BR', 'price': 0},
-    'SANB3':  {'quantity': 49,         'targetPercent': (0.4 * 0.28 * (1 / 3)),  'type': 'BR', 'price': 0},
-    'AESB3':  {'quantity': 20,         'targetPercent': (0.4 * 0.45 * (1 / 5)),  'type': 'BR', 'price': 0},
-    'AURE3':  {'quantity': 53,         'targetPercent': (0.4 * 0.45 * (1 / 5)),  'type': 'BR', 'price': 0},
-    'CMIG4':  {'quantity': 46,         'targetPercent': (0.4 * 0.45 * (1 / 5)),  'type': 'BR', 'price': 0},
-    'TAEE3':  {'quantity': 68,         'targetPercent': (0.4 * 0.45 * (1 / 5)),  'type': 'BR', 'price': 0},
-    'TRPL4':  {'quantity': 27,         'targetPercent': (0.4 * 0.45 * (1 / 5)),  'type': 'BR', 'price': 0},
-    'BBSE3':  {'quantity': 10,         'targetPercent': (0.4 * 0.18 * (1 / 2)),  'type': 'BR', 'price': 0},
-    'CXSE3':  {'quantity': 20,         'targetPercent': (0.4 * 0.18 * (1 / 2)),  'type': 'BR', 'price': 0},
-    'SAPR3':  {'quantity': 41,         'targetPercent': (0.4 * 0.09 * (1)),      'type': 'BR', 'price': 0},
-    'KNRI11': {'quantity': 4,          'targetPercent': (0.25 * 0.5 * (1 / 2)),  'type': 'BR', 'price': 0},
-    'MXRF11': {'quantity': 70,         'targetPercent': (0.25 * 0.5 * (1 / 2)),  'type': 'BR', 'price': 0},
+    'BBAS3':  {'quantity': 5,          'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'BBDC3':  {'quantity': 35,         'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'SANB3':  {'quantity': 49,         'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'AESB3':  {'quantity': 20,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'AURE3':  {'quantity': 53,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'CMIG4':  {'quantity': 46,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'TAEE3':  {'quantity': 68,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'TRPL4':  {'quantity': 27,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'BBSE3':  {'quantity': 10,         'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'CXSE3':  {'quantity': 20,         'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'SAPR3':  {'quantity': 41,         'targetPercent': (0.4  * 0.09 * (1)),     'type': 'BR', 'price': 0},
+    'KNRI11': {'quantity': 4,          'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
+    'MXRF11': {'quantity': 70,         'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
     'HGLG11': {'quantity': 1,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
     'VILG11': {'quantity': 6,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
     'BRCR11': {'quantity': 10,         'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
     'HGRE11': {'quantity': 5,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
     'MALL11': {'quantity': 1,          'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
     'XPML11': {'quantity': 2,          'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'VOO':    {'quantity': 0,          'targetPercent': (0.2 * 0.5),             'type': 'US', 'price': 0},
-    'BIL':    {'quantity': 0,          'targetPercent': (0.2 * 0.30),            'type': 'US', 'price': 0},
-    'VNQ':    {'quantity': 0,          'targetPercent': (0.2 * 0.20),            'type': 'US', 'price': 0},
-    'BTC':    {'quantity': 0.00318941, 'targetPercent': (0.05 * 0.8),            'type': 'CR', 'price': 0},
-    'ETH':    {'quantity': 0.0205375,  'targetPercent': (0.05 * 0.2),            'type': 'CR', 'price': 0},
-    'RE':     {'quantity': 1000,       'targetPercent': (0.1),                   'type': 'BR', 'price': 1},
+    'VOO':    {'quantity': 0.43195,    'targetPercent': (0.2  * 0.5),            'type': 'US', 'price': 0},
+    'BIL':    {'quantity': 1.64042,    'targetPercent': (0.2  * 0.30),           'type': 'US', 'price': 0},
+    'VNQ':    {'quantity': 1.76097,    'targetPercent': (0.2  * 0.20),           'type': 'US', 'price': 0},
+    'BTC':    {'quantity': 0.00318941, 'targetPercent': (0.05 * 0.80),           'type': 'CR', 'price': 0},
+    'ETH':    {'quantity': 0.0205375,  'targetPercent': (0.05 * 0.20),           'type': 'CR', 'price': 0},
+    'RE':     {'quantity': 1000,       'targetPercent': (0.10),                  'type': 'BR', 'price': 1},
 }
+
+
+# Scientific rounding
+def round_scientific(num, decimals):
+    multiplier = 10 ** decimals
+    rounded_num = round(num * multiplier) / multiplier
+    return rounded_num
 
 
 # Write the contribution report
 def print_report(contribution):
     with open("report.txt", "w") as file:
         for asset, properties in contribution.items():
-            asset_name = asset.ljust(10)
-            quantity = "{:.3e}".format(round((properties['quantity']), 3)).ljust(10)
-            value = "{:.3f}".format(properties['value']).ljust(10)
+            asset_name = asset.ljust(15)
+            quantity = "{:.3f}".format(round_scientific((properties['quantity']), 3)).ljust(15)
+            value = "{:.3f}".format(properties['value']).ljust(15)
             line = f"Asset: {asset_name} Quantity: {quantity} Value: {value}\n"
             file.write(line)
 
 
 # Write the portfolio report
-def print_portfolio(assets):
+def print_portfolio():
     with open("portfolio.txt", "w") as file:
         for asset, properties in assets.items():
-            asset_name = asset.ljust(10)
-            quantity = "{:.3e}".format(round((properties['quantity']), 3)).ljust(10)
-            price = "{:.3f}".format(properties['price']).ljust(10)
-            value = "{:.3f}".format(properties['quantity'] * properties['price']).ljust(10)
+            asset_name = asset.ljust(15)
+            quantity = "{:.3f}".format(round_scientific((properties['quantity']), 3)).ljust(15)
+            price = "{:.3f}".format(properties['price']).ljust(15)
+            value = "{:.3f}".format(properties['quantity'] * properties['price']).ljust(15)
             line = f"Asset: {asset_name} Quantity: {quantity} Price: {price} Value: {value}\n"
             file.write(line)
 
@@ -155,9 +162,9 @@ def main():
     # Calculate the contributions
     distribute_contributions(total_contribution)
 
-    print_portfolio(assets)
-
+    print_portfolio()
     print("Finished")
+    print(f'\nCopy and replace in "assets" code\n{assets}')
 
 
 if __name__ == "__main__":
