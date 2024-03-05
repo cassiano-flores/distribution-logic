@@ -31,20 +31,13 @@ assets = {
 }
 
 
-# Scientific rounding
-def round_scientific(num, decimals):
-    multiplier = 10 ** decimals
-    rounded_num = round(num * multiplier) / multiplier
-    return rounded_num
-
-
 # Write the contribution report
 def print_report(contribution):
     with open("report.txt", "w") as file:
         for asset, properties in contribution.items():
-            asset_name = asset.ljust(15)
-            quantity = "{:.3f}".format(round_scientific((properties['quantity']), 3)).ljust(15)
-            value = "{:.3f}".format(properties['value']).ljust(15)
+            asset_name = asset.ljust(20)
+            quantity = "{:.8f}".format((properties['quantity'])).ljust(20)
+            value = "{:.3f}".format(properties['value']).ljust(20)
             line = f"Asset: {asset_name} Quantity: {quantity} Value: {value}\n"
             file.write(line)
 
@@ -52,13 +45,17 @@ def print_report(contribution):
 # Write the portfolio report
 def print_portfolio():
     with open("portfolio.txt", "w") as file:
+        total_portfolio = 0
         for asset, properties in assets.items():
-            asset_name = asset.ljust(15)
-            quantity = "{:.3f}".format(round_scientific((properties['quantity']), 3)).ljust(15)
-            price = "{:.3f}".format(properties['price']).ljust(15)
-            value = "{:.3f}".format(properties['quantity'] * properties['price']).ljust(15)
+            asset_name = asset.ljust(20)
+            quantity = "{:.8f}".format((properties['quantity'])).ljust(20)
+            price = "{:.3f}".format(properties['price']).ljust(20)
+            value = "{:.3f}".format(properties['quantity'] * properties['price']).ljust(20)
             line = f"Asset: {asset_name} Quantity: {quantity} Price: {price} Value: {value}\n"
             file.write(line)
+            total_portfolio += (properties['quantity'] * properties['price'])
+        total_portfolio = "{:.3f}".format(total_portfolio)
+        file.write(f"\nTotal portfolio: R$ {total_portfolio}\n")
 
 
 # Get the current dollar value in reais
