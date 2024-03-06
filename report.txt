@@ -1,0 +1,11 @@
+Asset: VOO                  Quantity: 0.17000000           Value: 391.790             
+Asset: RE                   Quantity: 373.00000000         Value: 373.000             
+Asset: SAPR3                Quantity: 37.00000000          Value: 181.300             
+Asset: AESB3                Quantity: 16.00000000          Value: 168.800             
+Asset: KNRI11               Quantity: 1.00000000           Value: 163.340             
+Asset: BBAS3                Quantity: 2.00000000           Value: 117.920             
+Asset: CXSE3                Quantity: 5.00000000           Value: 76.500              
+Asset: MXRF11               Quantity: 7.00000000           Value: 72.030              
+Asset: BBSE3                Quantity: 2.00000000           Value: 65.960              
+Asset: HGLG11               Quantity: 1.00000000           Value: 168.990             
+Asset: BIL                  Quantity: 0.03000000           Value: 13.565              

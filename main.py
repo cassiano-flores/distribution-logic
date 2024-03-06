@@ -3,31 +3,31 @@ import math
 
 # My assets
 assets = {
-    'BBAS3':  {'quantity': 5,          'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
-    'BBDC3':  {'quantity': 35,         'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
-    'SANB3':  {'quantity': 49,         'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
-    'AESB3':  {'quantity': 20,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
-    'AURE3':  {'quantity': 53,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
-    'CMIG4':  {'quantity': 46,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
-    'TAEE3':  {'quantity': 68,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
-    'TRPL4':  {'quantity': 27,         'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
-    'BBSE3':  {'quantity': 10,         'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'CXSE3':  {'quantity': 20,         'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'SAPR3':  {'quantity': 41,         'targetPercent': (0.4  * 0.09 * (1)),     'type': 'BR', 'price': 0},
-    'KNRI11': {'quantity': 4,          'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
-    'MXRF11': {'quantity': 70,         'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
-    'HGLG11': {'quantity': 1,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'VILG11': {'quantity': 6,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'BRCR11': {'quantity': 10,         'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'HGRE11': {'quantity': 5,          'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'MALL11': {'quantity': 1,          'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'XPML11': {'quantity': 2,          'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
-    'VOO':    {'quantity': 0.43195,    'targetPercent': (0.2  * 0.5),            'type': 'US', 'price': 0},
-    'BIL':    {'quantity': 1.64042,    'targetPercent': (0.2  * 0.30),           'type': 'US', 'price': 0},
-    'VNQ':    {'quantity': 1.76097,    'targetPercent': (0.2  * 0.20),           'type': 'US', 'price': 0},
-    'BTC':    {'quantity': 0.00318941, 'targetPercent': (0.05 * 0.80),           'type': 'CR', 'price': 0},
-    'ETH':    {'quantity': 0.0205375,  'targetPercent': (0.05 * 0.20),           'type': 'CR', 'price': 0},
-    'RE':     {'quantity': 1000,       'targetPercent': (0.10),                  'type': 'BR', 'price': 1},
+    'BBAS3':  {'quantity': 7.00000000,    'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'BBDC3':  {'quantity': 35.00000000,   'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'SANB3':  {'quantity': 49.00000000,   'targetPercent': (0.4  * 0.28 * (1 / 3)), 'type': 'BR', 'price': 0},
+    'AESB3':  {'quantity': 36.00000000,   'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'AURE3':  {'quantity': 53.00000000,   'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'CMIG4':  {'quantity': 46.00000000,   'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'TAEE3':  {'quantity': 68.00000000,   'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'TRPL4':  {'quantity': 27.00000000,   'targetPercent': (0.4  * 0.45 * (1 / 5)), 'type': 'BR', 'price': 0},
+    'BBSE3':  {'quantity': 12.00000000,   'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'CXSE3':  {'quantity': 25.00000000,   'targetPercent': (0.4  * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'SAPR3':  {'quantity': 78.00000000,   'targetPercent': (0.4  * 0.09 * (1)),     'type': 'BR', 'price': 0},
+    'KNRI11': {'quantity': 5.00000000,    'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
+    'MXRF11': {'quantity': 77.00000000,   'targetPercent': (0.25 * 0.5  * (1 / 2)), 'type': 'BR', 'price': 0},
+    'HGLG11': {'quantity': 2.00000000,    'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'VILG11': {'quantity': 6.00000000,    'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'BRCR11': {'quantity': 10.00000000,   'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'HGRE11': {'quantity': 5.00000000,    'targetPercent': (0.25 * 0.18 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'MALL11': {'quantity': 1.00000000,    'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'XPML11': {'quantity': 2.00000000,    'targetPercent': (0.25 * 0.14 * (1 / 2)), 'type': 'BR', 'price': 0},
+    'VOO':    {'quantity': 0.60190000,    'targetPercent': (0.2  * 0.5),            'type': 'US', 'price': 0},
+    'BIL':    {'quantity': 1.64042000,    'targetPercent': (0.2  * 0.30),           'type': 'US', 'price': 0},
+    'VNQ':    {'quantity': 1.76097000,    'targetPercent': (0.2  * 0.20),           'type': 'US', 'price': 0},
+    'BTC':    {'quantity': 0.00318941,    'targetPercent': (0.05 * 0.80),           'type': 'CR', 'price': 0},
+    'ETH':    {'quantity': 0.02053750,    'targetPercent': (0.05 * 0.20),           'type': 'CR', 'price': 0},
+    'RE':     {'quantity': 1370.00000000, 'targetPercent': (0.10),                  'type': 'BR', 'price': 1},
 }
 
 
@@ -161,7 +161,6 @@ def main():
 
     print_portfolio()
     print("Finished")
-    print(f'\nCopy and replace in "assets" code\n{assets}')
 
 
 if __name__ == "__main__":
