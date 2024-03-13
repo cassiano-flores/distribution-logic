@@ -27,7 +27,7 @@ assets = {
     'VNQ':    {'quantity': 1.76097000,    'targetPercent': (0.2  * 0.20),           'type': 'US', 'price': 0},
     'BTC':    {'quantity': 0.00318941,    'targetPercent': (0.05 * 0.80),           'type': 'CR', 'price': 0},
     'ETH':    {'quantity': 0.02053750,    'targetPercent': (0.05 * 0.20),           'type': 'CR', 'price': 0},
-    'RE':     {'quantity': 1370.00000000, 'targetPercent': (0.10),                  'type': 'BR', 'price': 1},
+    'RE':     {'quantity': 1500.00000000, 'targetPercent': (0.10),                  'type': 'BR', 'price': 1},
 }
 
 
