@@ -1,32 +1,30 @@
 import requests
 import math
-from openpyxl import load_workbook
+import csv
 
-csv_file_path = 'database.xlsx'
+csv_file_path = 'database.csv'
 
 
-def load_assets_from_excel(excel_file_path):
+def load_assets_from_csv(csv_file_path):
     assets = {}
-    workbook = load_workbook(excel_file_path)
-    sheet = workbook.active
+    with open(csv_file_path) as csv_file:
+      csv_reader = csv.reader(csv_file, delimiter=';')
+      next(csv_reader)
 
-    for row in sheet.iter_rows(min_row=2, values_only=True):
-        if not any(row):
-            break
-
-        asset_name, quantity, target_percent, asset_type, price = row
-        assets[asset_name] = {
-            'quantity': float(quantity),
-            'targetPercent': eval(target_percent),
-            'type': asset_type,
-            'price': float(price)
-        }
+      for row in csv_reader:
+          asset_name, quantity, target_percent, asset_type, price = row
+          assets[asset_name] = {
+              'quantity': float(quantity.replace(',','.')),
+              'targetPercent': eval(target_percent),
+              'type': asset_type,
+              'price': float(price)
+          }
 
     return assets
 
 
 # My assets
-assets = load_assets_from_excel(csv_file_path)
+assets = load_assets_from_csv(csv_file_path)
 
 
 # Write the contribution report
