@@ -1,9 +1,6 @@
-Asset: RE                   Quantity: 1394.00000000        Value: 1394.000            
-Asset: AESB3                Quantity: 9.00000000           Value: 88.470              
-Asset: VOO                  Quantity: 0.05000000           Value: 119.368             
-Asset: BIL                  Quantity: 0.18000000           Value: 82.496              
-Asset: MXRF11               Quantity: 8.00000000           Value: 83.680              
-Asset: CXSE3                Quantity: 4.00000000           Value: 63.120              
-Asset: SAPR3                Quantity: 12.00000000          Value: 59.640              
-Asset: BBDC3                Quantity: 3.00000000           Value: 39.330              
-Asset: BBSE3                Quantity: 2.00000000           Value: 66.380              
+Asset: AESB3                Quantity: 5.00000000           Value: 46.050              
+Asset: BBDC3                Quantity: 4.00000000           Value: 49.640              
+Asset: BBAS3                Quantity: 1.00000000           Value: 56.320              
+Asset: SAPR3                Quantity: 7.00000000           Value: 33.530              
+Asset: CXSE3                Quantity: 2.00000000           Value: 31.180              
+Asset: RE                   Quantity: 17.00000000          Value: 17.000              
