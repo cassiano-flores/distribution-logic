@@ -1,3 +1,4 @@
-Asset: BBAS3                Quantity: 9.00000000           Value: 254.340             
-Asset: CMIG4                Quantity: 4.00000000           Value: 41.760              
-Asset: RE                   Quantity: 7.00000000           Value: 7.000               
+Asset: RE                   Quantity: 51.00000000          Value: 51.000              
+Asset: BIL                  Quantity: 0.10000000           Value: 46.774              
+Asset: VOO                  Quantity: 0.01000000           Value: 24.839              
+Asset: CXSE3                Quantity: 1.00000000           Value: 16.010              
